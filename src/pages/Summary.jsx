@@ -14,7 +14,8 @@ export const Summary = () => {
 
   const fetchPrice = async (configId, dateVal) => {
     try {
-      const priceRes = await fetch(`https://hero-cycles-backend.onrender.com/api/configurations/${configId}/price?date=${dateVal}`);
+      const fullDate = dateVal.includes('T') ? dateVal : `${dateVal}T23:59:59.999Z`;
+      const priceRes = await fetch(`https://hero-cycles-backend.onrender.com/api/configurations/${configId}/price?date=${fullDate}`);
       const priceData = await priceRes.json();
       if (!priceRes.ok) throw new Error(priceData.error || 'Failed to fetch price breakdown');
       
@@ -189,7 +190,11 @@ export const Summary = () => {
               <div className="flex justify-between items-end mb-10">
                 <span className="font-sans-body text-[var(--color-text-body)] text-sm uppercase tracking-widest">Total Price</span>
                 <span className="font-serif-display text-4xl text-[var(--color-pink)] leading-none">
-                  {quoteState.serverTotal !== null ? `₹${quoteState.serverTotal}` : '—'}
+                  {quoteState.serverTotal !== null 
+                    ? `₹${quoteState.serverTotal}` 
+                    : (lineItems.length > 0 
+                        ? `₹${lineItems.reduce((sum, item) => sum + item.price, 0)}` 
+                        : '—')}
                 </span>
               </div>
               
