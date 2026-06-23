@@ -22,6 +22,15 @@ Backend: https://hero-cycles-backend.onrender.com
 * better-sqlite3
 
 ---
+## Visual Walkthrough
+<img width="1703" height="863" alt="Screenshot 2026-06-23 at 8 31 37 PM" src="https://github.com/user-attachments/assets/04536680-56a1-49ce-a9db-6f42539afdd2" />
+
+<img width="1705" height="866" alt="Screenshot 2026-06-23 at 8 32 11 PM" src="https://github.com/user-attachments/assets/f4aac359-24b9-46d4-9ae9-8ada0250a36c" />
+
+<img width="1710" height="860" alt="Screenshot 2026-06-23 at 8 32 53 PM" src="https://github.com/user-attachments/assets/1d88261d-1841-4518-837c-ce5466d94299" />
+
+<img width="1703" height="861" alt="Screenshot 2026-06-23 at 8 33 37 PM" src="https://github.com/user-attachments/assets/1121929d-a443-421a-a897-abf92dd44d00" />
+
 
 ## Setup
 
