@@ -18,7 +18,7 @@ export const Admin = () => {
 
   const fetchCatalog = () => {
     setLoading(true);
-    fetch('http://localhost:3001/api/catalog')
+    fetch('https://hero-cycles-backend.onrender.com/api/catalog')
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch catalog');
         return res.json();
@@ -51,7 +51,7 @@ export const Admin = () => {
       return;
     }
     setHistoryLoading(true);
-    fetch(`http://localhost:3001/api/parts/${selectedPartId}/prices`)
+    fetch(`https://hero-cycles-backend.onrender.com/api/parts/${selectedPartId}/prices`)
       .then(res => res.json())
       .then(data => {
         setPriceHistory(data);
@@ -86,7 +86,7 @@ export const Admin = () => {
 
     try {
       const normalizedDate = effectiveFrom ? new Date(effectiveFrom).toISOString() : new Date().toISOString();
-      const res = await fetch(`http://localhost:3001/api/parts/${selectedPartId}/price`, {
+      const res = await fetch(`https://hero-cycles-backend.onrender.com/api/parts/${selectedPartId}/price`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

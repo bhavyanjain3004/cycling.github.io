@@ -20,7 +20,7 @@ export const BuildProvider = ({ children }) => {
   const [selectedParts, setSelectedParts] = useState({});
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/catalog')
+    fetch('https://hero-cycles-backend.onrender.com/api/catalog')
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch catalog');
         return res.json();

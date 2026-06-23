@@ -14,7 +14,7 @@ export const Summary = () => {
 
   const fetchPrice = async (configId, dateVal) => {
     try {
-      const priceRes = await fetch(`http://localhost:3001/api/configurations/${configId}/price?date=${dateVal}`);
+      const priceRes = await fetch(`https://hero-cycles-backend.onrender.com/api/configurations/${configId}/price?date=${dateVal}`);
       const priceData = await priceRes.json();
       if (!priceRes.ok) throw new Error(priceData.error || 'Failed to fetch price breakdown');
       
@@ -45,7 +45,7 @@ export const Summary = () => {
     try {
       const partIds = lineItems.map(item => item.id);
       
-      const configRes = await fetch('http://localhost:3001/api/configurations', {
+      const configRes = await fetch('https://hero-cycles-backend.onrender.com/api/configurations', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ partIds })
